@@ -1,2 +1,2 @@
-# kitchengenie
+# dishdiva
 Recipe generator with AI 🤖
