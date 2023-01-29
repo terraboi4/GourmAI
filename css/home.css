@@ -2,7 +2,6 @@
 
 :root {
     --text-color: #e1e5f2;
-    --bg-color: #022b3a;
     --pallete-1: #002b3a;
     --pallete-2: #1f7a8c;
     --pallete-3: #bfdbf7;
@@ -17,13 +16,22 @@
 }
 
 body {
-    background-color: var(--bg-color);
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--pallete-2);
 }
 
-.wrapper {
-    margin: auto;
-    width: 50%;
-    text-align: center;
+.container {
+    position: relative;
+    width: 90%;
+    height: 87vh;
+    border: 5px solid var(--pallete-4);
+    border-radius: 2px;
 }
 
 
@@ -52,7 +60,12 @@ a.login-button{
     text-decoration: none;
     padding: 14px 15px;
     border: 0px solid #000;
-    border-radius: 10px;
     display: inline-block;
-   }
+    box-shadow: 4px 4px #000;
+    transition: .2s;
+}
+
+a.login-button:hover{
+    box-shadow: 10px 10px #000;
+}
 
