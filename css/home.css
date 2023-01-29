@@ -35,6 +35,7 @@ body {
 }
 
 
+
 h1 {
     color: var(--text-color);
     padding: 1em 10px;
@@ -50,7 +51,7 @@ p {
     text-align: center;
 }
 
-a.login-button{
+button{
     background-color: #88acd0;
     color: var(--text-color);
     font-family: Trebuchet MS;
@@ -65,7 +66,8 @@ a.login-button{
     transition: .2s;
 }
 
-a.login-button:hover{
+button:hover{
+    cursor: pointer;
     box-shadow: 10px 10px #000;
 }
 

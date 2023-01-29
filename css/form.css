@@ -1,0 +1,89 @@
+:root {
+    --text-color: #e1e5f2;
+    --pallete-1: #002b3a;
+    --pallete-2: #1f7a8c;
+    --pallete-3: #bfdbf7;
+    --pallete-4: #e1e1f2;
+    --pallete-5: #fff;
+}
+
+* {
+    color: var(--pallete-4);
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+body {
+    transition: .2s;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--pallete-2);
+}
+
+.container {
+    padding: 70px 30px;
+    border: 5px solid var(--pallete-4);
+    border-radius: 2px;
+}
+
+.form {
+    width: 400px;
+    height: auto;
+}
+
+.heading {
+    text-align: center;
+    font-size: 60px;
+    margin-bottom: 50px;
+}
+
+input {
+    width: 80%;
+    height: 35px;
+    display: block;
+    margin: 20px auto;
+    border: none;
+    background: var(--pallete-5);
+    box-shadow: 6px 6px var(--pallete-1);
+    transition: .2s;
+
+}
+
+input:focus {
+    box-shadow: 12px 12px var(--pallete-1);
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+    transition: .2s;
+}
+
+button{
+    background: var(--pallete-5);
+    color: black;
+    font-family: Trebuchet MS;
+    font-size: 18px;
+    font-weight: 800;
+    font-style: normal;
+    text-decoration: none;
+    padding: 14px 15px;
+    border: 0px solid #000;
+    display: inline-block;
+    box-shadow: 4px 4px var(--pallete-1);
+    transition: .2s;
+}
+
+button:hover{
+    cursor: pointer;
+    box-shadow: 10px 10px #000;
+}
