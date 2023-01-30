@@ -1,3 +1,3 @@
 # gourmAI
-Recipe generator with AI 🤖
-Pronounced like "gourmet"
+1. Recipe generator with AI 🤖
+2. Pronounced like "gourmet"
