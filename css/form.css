@@ -1,10 +1,10 @@
 :root {
     --text-color: #e1e5f2;
-    --pallete-1: #002b3a;
-    --pallete-2: #1f7a8c;
-    --pallete-3: #bfdbf7;
-    --pallete-4: #e1e1f2;
-    --pallete-5: #fff;
+    --pallete-1: #26547cff;
+    --pallete-2: #ef476fff;
+    --pallete-3: #ffd166ff;
+    --pallete-4: #06d6a0ff;
+    --pallete-5: #fcfcfcff;
 }
 
 * {
@@ -64,14 +64,13 @@ input:focus {
 
 a {
     text-decoration: none;
-    color: #000;
+    color: #000000;
     transition: .2s;
 }
 
 button{
     background: var(--pallete-5);
     color: black;
-    font-family: Trebuchet MS;
     font-size: 18px;
     font-weight: 800;
     font-style: normal;

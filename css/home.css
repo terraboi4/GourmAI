@@ -2,11 +2,11 @@
 
 :root {
     --text-color: #e1e5f2;
-    --pallete-1: #002b3a;
-    --pallete-2: #1f7a8c;
-    --pallete-3: #bfdbf7;
-    --pallete-4: #e1e1f2;
-    --pallete-5: #fff;
+    --pallete-1: #26547cff;
+    --pallete-2: #ef476fff;
+    --pallete-3: #ffd166ff;
+    --pallete-4: #06d6a0ff;
+    --pallete-5: #fcfcfcff;
 }
 
 
@@ -23,15 +23,16 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: var(--pallete-2);
+    background-color: var(--pallete-1);
 }
 
 .container {
     position: relative;
     width: 90%;
     height: 87vh;
-    border: 5px solid var(--pallete-4);
+    border: 5px solid var(--pallete-3);
     border-radius: 2px;
+    margin: auto;
 }
 
 
