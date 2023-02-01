@@ -1,7 +1,6 @@
 /* Palette: #022b3a, #1f7a8c, #bfdbf7, #e1e5f2, #ffffff */
 
 :root {
-    --text-color: #e1e5f2;
     --pallete-1: #26547cff;
     --pallete-2: #ef476fff;
     --pallete-3: #ffd166ff;
@@ -16,6 +15,7 @@
 }
 
 body {
+    padding-top: 1em;
     width: 100%;
     min-height: 100vh;
     height: auto;
@@ -30,45 +30,36 @@ body {
     position: relative;
     width: 90%;
     height: 87vh;
-    border: 5px solid var(--pallete-3);
-    border-radius: 2px;
     margin: auto;
 }
 
 
 
-h1 {
-    color: var(--text-color);
-    padding: 1em 10px;
+h1,h2,p,button {
+    color: var(--pallete-5);
 }
 
-h2 {
-    color: var(--text-color);
-}
 
 p {
-    color: rgb(219, 219, 219);
     padding: 8px 10%;
     text-align: center;
 }
 
 button{
-    background-color: #88acd0;
-    color: var(--text-color);
-    font-family: Trebuchet MS;
+    background-color: var(--pallete-5);
+    color: black;
     font-size: 18px;
-    font-weight: 800;
     font-style: normal;
     text-decoration: none;
     padding: 14px 15px;
-    border: 0px solid #000;
+    border: 0px solid #000000;
     display: inline-block;
-    box-shadow: 4px 4px #000;
+    box-shadow: 6px 6px var(--pallete-3);
     transition: .2s;
 }
 
 button:hover{
     cursor: pointer;
-    box-shadow: 10px 10px #000;
+    box-shadow: 10px 10px var(--pallete-3);
 }
 
