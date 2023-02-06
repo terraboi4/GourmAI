@@ -8,7 +8,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap.min.css">
 
 </head>
 <body>
@@ -22,7 +22,7 @@
           <h4 class="card-title">Login 🍽</h4>
           <input type="text" placeholder="Username" id="username" class="form-control mb-3">
           <input type="password" placeholder="Password" id="password" class="form-control mb-3">
-          <button id="submit" type="button" class="btn btn-outline-primary w-100">Go have fun</button>
+          <button id="submit" type="button" class="btn btn-outline-primary w-100">Let's get cooking</button>
           
           <p class="w-100 mt-2">Don't have an account? Sign up <a href="register.html" class="bs5-bu">here</a></p>
         </div>
@@ -57,6 +57,7 @@
           const username = document.getElementById('username');
           const password = document.getElementById('password');
           const submit = document.getElementById('submit');
+          
           function AuthUser() {
             const dbref = ref(db);
 
@@ -75,11 +76,11 @@
           }
           
           function decrypt(pass) {
-            let pass12 = CryptoJS.AES.decrypt(pass, password.value);
-            return pass12.toString();
+            var pass123 = CryptoJS.AES.decrypt(pass, password.value);
+            return pass123.toString(CryptoJS.enc.Utf8);
           }
           
-          function Login(user) {
+          function Login(user) {  
             localStorage.setItem('user',JSON.stringify(user));
             window.location = "/dashboard.html";
           }
