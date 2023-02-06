@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Register</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
+</head>
+<body>
+  <header>
+    <!-- place navbar here -->
+  </header>
+  <main>
+    <div class="d-flex align-items-center justify-content-center" style="min-height: 75vh;">
+      <div class="card text-start text-center p-4">
+        <div class="card-body">
+          <h4 class="card-title">Sign Up 👩‍🍳</h4>
+          <input type="text" placeholder="Username" id="username" class="form-control mb-3">
+          <input type="email" placeholder="Email" id="email" class="form-control mb-3">
+          <input type="password" placeholder="Password" id="password" class="form-control mb-3">
+          <button type="button" id="submit" class="btn btn-outline-primary w-100" >Start cooking</button>
+          
+          <p class="w-100 mt-2">Already have an account? Log in <a href="login.html" class="bs5-bu">here</a></p>
+        </div>
+      </div>
+    </div>
+    
+  </main>
+  <footer>
+    <!-- place footer here -->
+  </footer>
+
+  <script type="module">
+  //--------------------------------FIREBASE CONFIGURATION---------------------------
+          import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+          const firebaseConfig = {
+            apiKey: "AIzaSyC1s0QNSBmzlkpCli534VGKrslt4s_zSf4",
+            authDomain: "gourmai-d0991.firebaseapp.com",
+            databaseURL: "https://gourmai-d0991-default-rtdb.firebaseio.com",
+            projectId: "gourmai-d0991",
+            storageBucket: "gourmai-d0991.appspot.com",
+            messagingSenderId: "155115592371",
+            appId: "1:155115592371:web:689d7dea6f98a8f458eec6"
+          };
+        
+          const app = initializeApp(firebaseConfig);
+  
+          import {getDatabase, ref, set, child, get } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
+          
+          const db = getDatabase();
+
+          const username = document.getElementById('username');
+          const email = document.getElementById('email');
+          const password = document.getElementById('password');
+          const submit = document.getElementById('submit');
+
+          //--------------------REGISTRATION--------------------
+          
+          function isEmpty(str) {
+            return str === null || str.match(/^ *$/) !== null;
+          } 
+
+          function Validation() {
+            let username_regex = /^[A-Za-z0-9._]{1,20}$/;
+            let email_regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+            let password_regex = /^(?=.*[0-9])(?=.*[a-z]).{8,}$/;
+
+            if (isEmpty(password.value) || isEmpty(email.value) || isEmpty(username.value)) {
+              alert("Please fill out all forms.")
+              return false;
+            }
+
+            if (!username_regex.test(username.value)) {
+              alert("Username must be between 5 and 20 characters and can only contain letters, numbers, periods, and underscores");
+              return false;
+            } 
+            if (!email_regex.test(email.value)) {
+              alert("Invalid email address");
+              return false;
+            }
+            if (!password_regex.test(password.value)) {
+              alert("Password must be at least 8 characters and contain at least one letter and one number.");
+              return false;
+            }
+
+            return true;
+          }
+
+          function RegisterUser() {
+              
+              if (!Validation()) {
+                return;
+              }
+              const dbRef = ref(db);
+
+              get(child(dbRef, "users/"+username.value)).then((snapshot) => {
+                if (snapshot.exists()) {
+                  alert_better("You have already created an account.")
+                } else {
+                  set(ref(db, "users/"+username.value), {
+
+                    email: encrypt(email.value),
+                    username: username.value,
+                    password: encrypt(password.value)
+
+                  }).then(() => {
+
+                  }).catch((error) => {
+                    alert_better("Error: " + error)
+                  })
+                }
+              });
+            }
+          submit.addEventListener("click", RegisterUser);
+        // ---------------ENCRYPTION------------
+
+        function encrypt(pass) {
+            let pass12 = CryptoJS.AES.encrypt(pass, pass);
+            return pass12.toString();
+          }
+  </script>
+</body>
+
+</html>
