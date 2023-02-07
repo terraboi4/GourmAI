@@ -102,6 +102,7 @@
                 if (snapshot.exists()) {
                   alert_better("You have already created an account.")
                 } else {
+                  window.location = "/login.html";
                   set(ref(db, "users/"+username.value), {
 
                     email: encrypt(email.value),
