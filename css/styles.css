@@ -71,12 +71,12 @@ img {
     background-position: center;
   }
 
-  .content-wrapper {
+  #content-wrapper {
     padding-left: 240px;
   }
 }
 
-.navbar .nav-link {
+#navbar #nav-link {
   font-weight: 700;
 }
 
