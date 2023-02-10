@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
 
 :root {
-  --color-body: #9ccbb8;
-  --color-heading: #c0dfd3;
-  --color-base2: #3a4c40;
-  --color-base: #486856;
-  --color-brand: #6aa68b;
-  --color-brand2: #5f967c;
+  --color-body: #f6f7f8;
+  --color-heading: #2ec4b6;
+  --color-base2: #011627;
+  --color-base: #2f3235;
+  --color-brand: #ff3366;
+  --color-brand2: #20a4f3;
 }
 
 body {
-  background-color: var(--color-base2);
-  color: var(--color-body);
+  background-color: var(--color-body);
+  color: var(--color-base2);
   font-family: 'ABeeZee', sans-serif;
 }
 
@@ -24,33 +24,63 @@ h6 {
   color: var(--color-heading);
 }
 
-a {
+.link {
+  display: inline-block;
+  position: relative;
   text-decoration: none;
-  color: var(--color-body);
-  transition: all 0.4s ease;
+  color: var(--color-brand);
 }
 
-a:hover {
+.link:hover {
+  text-decoration: none;
   color: var(--color-brand);
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-brand);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 img {
   width: 100%;
 }
 
+.navbar {
+  background-color: var(--color-brand2);
+}
+
 @media (min-width: 992px) {
   .navbar {
     min-height: 100vh;
     width: 240px;
-    background: linear-gradient(#486856, #486856);
+    background: var(--color-brand2);
     background-size: cover;
     background-position: center;
+  }
+
+  .content-wrapper {
+    padding-left: 240px;
   }
 }
 
 .navbar .nav-link {
   font-weight: 700;
 }
+
+
 
 
 
