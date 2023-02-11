@@ -9,7 +9,6 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     
-    <link rel="stylesheet" href="css/bootstrap.min.css">
     <!--aos-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!--lineawesome-->
@@ -45,9 +44,6 @@
               <li class="nav-item">
                 <a class="nav-link" href="#pricing">Pricing</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#get-started">Get Started</a>
-              </li>
             </ul>
           </div>
         </div>
@@ -56,9 +52,9 @@
     </header>
     <main>
         <div id="content-wrapper">
-            <section data-aos="fade-in" id="home" class="full-height p-5">
+            <section id="home" class="full-height p-5">
                 <div class="container">
-                    <div class="row">
+                    <div class="row pt-5">
                         <div class="col-12">
                             <h1 class="display-4 fw-bold">The secret of chefs around the world</h1>
                             <p class="lead mb-4">GourmAI is a cutting-edge business that revolutionizes the way we cook and eat. 
@@ -70,25 +66,87 @@
                             <a href="/register.html" class="link" style="font-size:30px;">Try here</a>
                         </div>
                     </div>
+                    <div class="img-container w-50 h-50  pt-0 pr-5 ml-auto">
+                      <img src="/img/home-img.jpg" alt="picture didn't load 😭" data-aos="fade-up" style="rotate: 90deg;">
+                    </div>
                 </div>
             </section>
 
-            <section data-aos="fade-up" id="services" class="full-height p-5">
+            <section data-aos="fade-up" id="about" class="full-height p-5">
                 <h2 class="p-4">About</h2>
                 <div class="row">
-                    <div class="col-sm text-center m-2" style="box-shadow: 0px 0px 6px #888888; border-radius: 5px;">
+                    <div id="about-column" class="col-sm">
                       <i class="la la-hourglass-half" style="font-size:45px;"></i>
-                        <p><strong style="font-size: x-large;">Convenience</strong><br> GourmAI takes the guesswork out of meal planning and preparation. With its AI-powered recipe generator, you can quickly and easily come up with delicious meal ideas based on the ingredients you already have on hand. No more time-consuming trips to the grocery store or wasted food.</p>
+                      <h4>Convenience</h4><br>
+                        <p>GourmAI takes the guesswork out of meal planning and preparation. With its AI-powered recipe generator, you can quickly and easily come up with delicious meal ideas based on the ingredients you already have on hand. No more time-consuming trips to the grocery store or wasted food.</p>
                     </div>
-                    <div class="col-sm text-center m-2" style="box-shadow: 0px 0px 6px #888888; border-radius: 5px;">
-                      <i class="la la-hourglass-half" style="font-size:45px;"></i>
-                      <p><strong style="font-size: x-large;">Convenience</strong><br> GourmAI takes the guesswork out of meal planning and preparation. With its AI-powered recipe generator, you can quickly and easily come up with delicious meal ideas based on the ingredients you already have on hand. No more time-consuming trips to the grocery store or wasted food.</p>
+                    <div id="about-column" class="col-sm">
+                      <i class="las la-palette" style="font-size:45px;"></i>
+                      <h4>Creativity</h4>
+                      <p><br>GourmAI stimulates your culinary creativity by generating unique and unexpected recipe ideas. With its vast recipe database and AI technology, you'll never run out of new and interesting dishes to try. Whether you're an experienced cook or just starting out, GourmAI will challenge you to think outside the box and try new things in the kitchen.</p>
                     </div>
-                    <div class="col-sm text-center m-2" style="box-shadow: 0px 0px 6px #888888; border-radius: 5px;">
-                      <i class="la la-hourglass-half" style="font-size:45px;"></i>
-                      <p><strong style="font-size: x-large;">Convenience</strong><br> GourmAI takes the guesswork out of meal planning and preparation. With its AI-powered recipe generator, you can quickly and easily come up with delicious meal ideas based on the ingredients you already have on hand. No more time-consuming trips to the grocery store or wasted food.</p>
+                    <div id="about-column" class="col-sm">
+                      <i class="las la-trash" style="font-size:45px;"></i>
+                      <h4>Waste Reduction</h4>
+                      <p><br>GourmAI helps prevent food waste by generating recipes based on the ingredients you already have in your pantry. Rather than having to purchase additional ingredients to make a specific recipe, GourmAI helps you make the most of what you already have on hand. This not only saves you money, but also helps reduce food waste by preventing the expiration or spoilage of ingredients that may have gone unused otherwise.</p>
                     </div>
                   </div>
+
+            </section>
+            <br><br><br><br><br><br><br><br>
+            <section data-aos="fade-up" id="pricing" class=" full-height p-5">
+              <h2 class="p-4">Pricing</h2>
+              <div class="row">
+                <div class="col-4">
+                  <div class="card text-center">
+                    <div class="card-body">
+                      <h3 class="card-title border-bottom">Junior Chef</h3>
+                      <h4>$6.99 <small>/mo</small></h4>
+                      <ul class="list-unstyled">
+                        <li>AI-generated Recipes</li>
+                        <li>Dietary Restrictions</li>
+                        <li>Difficulty Meter</li>
+                        <li>"Junior Chef" label</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="card text-center">
+                    <div class="card-body">
+                      <h3 class="card-title border-bottom">Sous Chef</h3>
+                      <h4>$9.99 <small>/mo</small></h4>
+                      <ul class="list-unstyled">
+                        <li>AI-generated Recipes</li>
+                        <li>Dietary Restrictions</li>
+                        <li>Difficulty Meter</li>
+                        <li>Fanciness Meter</li>
+                        <li>Recipe-Sharing Forum</li>
+                        <li>"Sous Chef" label</li>
+                        
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="card text-center">
+                    <div class="card-body">
+                      <h3 class="card-title border-bottom">Master Chef</h3>
+                      <h4>$13.99 <small>/mo</small></h4>
+                      <ul class="list-unstyled">
+                        <li>AI-generated Recipes</li>
+                        <li>Dietary Restrictions</li>
+                        <li>Difficulty Meter</li>
+                        <li>Fanciness Meter</li>
+                        <li>Recipe-Sharing Forum</li>
+                        <li>Virtual Pantry</li>
+                        <li>Saved Recipes</li>
+                        <li>"Master Chef" label</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </section>
         </div>
     
