@@ -1,5 +1,27 @@
 {
   "dependencies": {
     "bootstrap": "^5.2.3"
-  }
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.3"
+  },
+  "name": "gourmai",
+  "description": "1. Recipe generator with AI 🤖\r 2. Pronounced like \"gourmet\"",
+  "version": "1.0.0",
+  "source": "./index.html",
+  "scripts": {
+    "dev": "parcel",
+    "build": "parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/terraboi4/gourmAI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/terraboi4/gourmAI/issues"
+  },
+  "homepage": "https://github.com/terraboi4/gourmAI#readme"
 }
