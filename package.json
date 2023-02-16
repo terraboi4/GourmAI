@@ -1,27 +1,16 @@
 {
-  "dependencies": {
-    "bootstrap": "^5.2.3"
+  "name": "gourmai",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.8.3"
-  },
-  "name": "gourmai",
-  "description": "1. Recipe generator with AI 🤖\r 2. Pronounced like \"gourmet\"",
-  "version": "1.0.0",
-  "source": "./index.html",
-  "scripts": {
-    "dev": "parcel",
-    "build": "parcel build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/terraboi4/gourmAI.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/terraboi4/gourmAI/issues"
-  },
-  "homepage": "https://github.com/terraboi4/gourmAI#readme"
+    "@sveltejs/vite-plugin-svelte": "^2.0.2",
+    "svelte": "^3.55.1",
+    "vite": "^4.1.0"
+  }
 }
