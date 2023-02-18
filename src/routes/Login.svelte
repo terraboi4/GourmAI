@@ -37,7 +37,7 @@
 </script>
 <Toaster/>
 {#if $currentUser}
-    <p>Signed in as {$currentUser.username} <button on:click={signOut}>Sign out?</button></p>
+    <p>Signed in as {$currentUser.username} <button class="btn btn-primary" on:click={signOut}>Sign out?</button></p>
 {:else}
     <div class="d-flex align-items-center justify-content-center" style="min-height: 75vh;">
         <div class="card text-start text-center p-4">
