@@ -1,4 +1,4 @@
-import './css/bootstrap.min.css'
+import '.css/output.css'
 import './css/styles.css'
 import App from './App.svelte'
 

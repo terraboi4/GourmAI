@@ -1,15 +1,15 @@
 <script lang="ts">
     import { currentUser, pb } from '../lib/pocketbase';
     import toast, { Toaster } from 'svelte-french-toast';
+
+    
     let username: string;
     let password: string;
     async function login() {
         try {
             await pb.collection('users').authWithPassword(username, password);
         } catch (error) {
-            toast("Uh oh... there's an error. Make sure you have a valid username and password.", {
-                icon: '😔',
-            });
+            toast.error(error.errorMessage);
         }
         
     }
@@ -18,16 +18,12 @@
         const data = {
             username,
             password,
-            passwordConfirm: password,
-            name: 'hi mom!',
+            passwordConfirm: password
         };
         const createdUser = await pb.collection('users').create(data);
         await login();
-        
         } catch (error) {
-            toast("Uh oh... there's an error. Make sure you have a valid username and password.", {
-                icon: '😔',
-            });
+            toast.error(error);
         }
     }
     function signOut() {
@@ -37,8 +33,16 @@
 </script>
 <Toaster/>
 {#if $currentUser}
-    <p>Signed in as {$currentUser.username} <button class="btn btn-primary" on:click={signOut}>Sign out?</button></p>
+    <button class="btn btn-primary"> Sign Out</button>
+    <!--<script lang='ts'>window.location.href = '/dashboard'</script>-->
 {:else}
+
+
+    <div class="rounded-md flex text-center justify-center" style="min-height: 75vh;">
+        
+    </div>
+
+    <!--
     <div class="d-flex align-items-center justify-content-center" style="min-height: 75vh;">
         <div class="card text-start text-center p-4">
         <div class="card-body">
@@ -52,5 +56,5 @@
                 
         </div>
         </div>
-    </div>
+    </div>-->
 {/if}
