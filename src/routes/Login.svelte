@@ -33,17 +33,30 @@
 </script>
 <Toaster/>
 {#if $currentUser}
-    <button class="btn btn-primary"> Sign Out</button>
     <!--<script lang='ts'>window.location.href = '/dashboard'</script>-->
 {:else}
-
-
-    <div class="rounded-md flex text-center justify-center" style="min-height: 75vh;">
-        
+    <div class="dark:bg-gray-900 bg-gray-100">
+        <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+            <div class=" bg-gray-50 w-full rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+                <div class="text-center dark:text-gray-100 text-gray-600 text-2xl py-4">
+                    <h1>Login/Register 🍳</h1>
+                </div>
+                <div class=" text-gray-600 dark:text-gray-200 block p-3">
+                    <label for="username">Username</label>
+                    <input class="bg-gray-50 border text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full px-2.5 py-2 my-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" type="text" placeholder="kitchenlover123" bind:value={username}>
+                    <label for="username">Password</label>
+                    <input class="bg-gray-50 border text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full px-2.5 py-2 my-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" type="text" placeholder="ilovetocook!" bind:value={password}>
+                    
+                
+                </div>
+                <button type="submit" class="bg-blue-500 w-full text-gray-600 dark:text-white rounded-lg px-5 py-2.5 text-center" on:click={login}>Login</button>
+                <button type="submit" class="bg-blue-500 w-full text-gray-600 dark:text-white rounded-lg px-5 py-2.5 text-center" on:click={signUp}>or Register</button>
+            </div>
+        </div>
     </div>
 
-    <!--
-    <div class="d-flex align-items-center justify-content-center" style="min-height: 75vh;">
+
+    <!--<div class="d-flex align-items-center justify-content-center" style="min-height: 75vh;">
         <div class="card text-start text-center p-4">
         <div class="card-body">
             <h4 class="card-title">Login/Register 🍳</h4>

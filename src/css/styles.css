@@ -1,8 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
+
+@tailwind utilities;
+@tailwind components;
+@tailwind base;
 
 :root {
   --color-body: #f6f7f8;
@@ -19,11 +19,6 @@ body {
   font-family: 'ABeeZee', sans-serif;
 }
 
-h1,
-h2,
-h3{
-  color: var(--color-heading);
-}
 
 .link {
   display: inline-block;
