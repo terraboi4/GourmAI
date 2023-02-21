@@ -50,7 +50,7 @@
                 
                 </div>
                 <button type="submit" class="bg-blue-500 w-full text-gray-600 dark:text-white rounded-lg px-5 py-2.5 text-center" on:click={login}>Login</button>
-                <button type="submit" class="bg-blue-500 w-full text-gray-600 dark:text-white rounded-lg px-5 py-2.5 text-center" on:click={signUp}>or Register</button>
+                <button type="submit" class="bg-blue w-full text-gray-600 dark:text-white rounded-lg px-5 py-2.5 text-center" on:click={signUp}>or Register</button>
             </div>
         </div>
     </div>
