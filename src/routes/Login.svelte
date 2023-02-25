@@ -5,11 +5,37 @@
     
     let username: string;
     let password: string;
+
+    function error(err) {
+        
+        let message = ""
+        //apparently username is called "identity" in pocketbase
+        if (err.data.data.identity) {
+            
+            message += ` Username: ${err.data.data.identity.message}\n`
+        }
+        if (err.data.data.password) {
+            
+            message += ` Password: ${err.data.data.password.message}\n`
+        }
+        //this is checking if you already have a registered account if you click "register"
+        if (err.data.data.username) {
+            
+            message += ` Username: ${err.data.data.username.message}\n`
+        }
+        else {
+            message += "Credentials not found. Make sure you have an account"
+        }
+        return message
+    }
+
     async function login() {
         try {
             await pb.collection('users').authWithPassword(username, password);
-        } catch (error) {
-            toast.error(error.errorMessage);
+        } catch (err) {
+            
+            //returns error messages
+            toast.error(error(err))
         }
         
     }
@@ -22,35 +48,41 @@
         };
         const createdUser = await pb.collection('users').create(data);
         await login();
-        } catch (error) {
-            toast.error(error);
+        } catch (err) {
+            //returns error messages
+            toast.error(error((err)))
+            
         }
     }
     function signOut() {
         pb.authStore.clear();
     }
 
+
 </script>
 <Toaster/>
 {#if $currentUser}
-    <!--<script lang='ts'>window.location.href = '/dashboard'</script>-->
+    <script lang='ts'>window.location.href = '/dashboard'</script>
 {:else}
-    <div class="dark:bg-gray-900 bg-gray-100">
+    <div class=" bg-gray-100">
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-            <div class=" bg-gray-50 w-full rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-                <div class="text-center dark:text-gray-100 text-gray-600 text-2xl py-4">
+            <div class=" bg-gray-50 border-gray-200 w-full rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">
+                <div class="text-center text-gray-600 text-2xl py-4">
                     <h1>Login/Register 🍳</h1>
                 </div>
-                <div class=" text-gray-600 dark:text-gray-200 block p-3">
+                <div class=" text-gray-600  block p-3">
                     <label for="username">Username</label>
-                    <input class="bg-gray-50 border text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full px-2.5 py-2 my-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" type="text" placeholder="kitchenlover123" bind:value={username}>
+                    <input class="bg-gray-50 border text-gray-900 sm:text-sm rounded-lg block w-full px-2.5 py-2 my-2" type="text" placeholder="kitchenlover123" bind:value={username}>
                     <label for="username">Password</label>
-                    <input class="bg-gray-50 border text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full px-2.5 py-2 my-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" type="text" placeholder="ilovetocook!" bind:value={password}>
+                    <input class="bg-gray-50 border text-gray-900 sm:text-sm rounded-lg block w-full px-2.5 py-2 my-2" type="text" placeholder="ilovetocook!" bind:value={password}>
                     
                 
                 </div>
-                <button type="submit" class="bg-blue-500 w-full text-gray-600 dark:text-white rounded-lg px-5 py-2.5 text-center" on:click={login}>Login</button>
-                <button type="submit" class="bg-blue w-full text-gray-600 dark:text-white rounded-lg px-5 py-2.5 text-center" on:click={signUp}>or Register</button>
+                <div class="text-center">
+                    <button type="submit" class="bg-blue text-gray-600 rounded-lg px-5 py-2.5 text-center" on:click={login}>Login</button>
+                    <button type="submit" class="bg-blue text-gray-600 rounded-lg px-5 py-2.5 text-center" on:click={signUp}>or Register</button>
+                </div>
+                
             </div>
         </div>
     </div>
@@ -71,3 +103,5 @@
         </div>
     </div>-->
 {/if}
+
+

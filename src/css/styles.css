@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
 
-@tailwind utilities;
-@tailwind components;
 @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 
 :root {
   --color-body: #f6f7f8;
@@ -102,3 +103,4 @@ canvas {
   top: 0;
   left: 0;
 }
+
