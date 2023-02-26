@@ -14,12 +14,12 @@
             
             message += ` Username: ${err.data.data.identity.message}\n`
         }
-        if (err.data.data.password) {
+        else if (err.data.data.password) {
             
             message += ` Password: ${err.data.data.password.message}\n`
         }
         //this is checking if you already have a registered account if you click "register"
-        if (err.data.data.username) {
+        else if (err.data.data.username) {
             
             message += ` Username: ${err.data.data.username.message}\n`
         }
@@ -73,14 +73,14 @@
                 <div class=" text-gray-600  block p-3">
                     <label for="username">Username</label>
                     <input class="bg-gray-50 border text-gray-900 sm:text-sm rounded-lg block w-full px-2.5 py-2 my-2" type="text" placeholder="kitchenlover123" bind:value={username}>
-                    <label for="username">Password</label>
-                    <input class="bg-gray-50 border text-gray-900 sm:text-sm rounded-lg block w-full px-2.5 py-2 my-2" type="text" placeholder="ilovetocook!" bind:value={password}>
+                    <label for="pass">Password</label>
+                    <input name="pass" type="password" class="bg-gray-50 border text-gray-900 sm:text-sm rounded-lg block w-full px-2.5 py-2 my-2" placeholder="•••••••" bind:value={password}>
                     
                 
                 </div>
                 <div class="text-center">
-                    <button type="submit" class="bg-blue text-gray-600 rounded-lg px-5 py-2.5 text-center" on:click={login}>Login</button>
-                    <button type="submit" class="bg-blue text-gray-600 rounded-lg px-5 py-2.5 text-center" on:click={signUp}>or Register</button>
+                    <button type="submit" class="bg-blue text-gray-600 rounded-lg px-5 py-2.5 mb-2.5text-center" on:click={login}>Login</button>
+                    <button type="submit" class="bg-blue text-gray-600 rounded-lg px-5 py-2.5 mb-2.5 text-center" on:click={signUp}>or Register</button>
                 </div>
                 
             </div>
