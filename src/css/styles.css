@@ -98,3 +98,8 @@ canvas {
   left: 0;
 }
 
+#slider {
+  --webkit-appearance: none;
+  border: #2ec4b6;
+  border-radius: 50%;
+}
