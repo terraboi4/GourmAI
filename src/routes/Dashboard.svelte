@@ -31,14 +31,16 @@
                     <a href="/credits" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Buy Credits</a>
                 </li>
                 <li>
-                
+                    {#if $currentUser}
                     <a href="/profile" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">
+                    
                         <img
                         class="w-8 h-8 rounded-full"
                         src="https://api.dicebear.com/5.x/initials/svg?seed={$currentUser.username}"
                         alt="avatar"
                         />
                     </a>
+                    {/if}
                 </li>
             </ul>
         </div>
@@ -48,11 +50,11 @@
 {#if gr_show}
     <div class="text-center">
 
-        <div class="tab hidden">
+        <div class="tab">
             <h1 class="text-4xl p-5">Ingredients</h1>
             <input class="rounded-lg px-3 py-3 placeholder-gray-300 text-slate-600 relative bg-white text-sm border-0 shadow outline-none w-3/5" type="text" placeholder="apples, bananas, oranges...">
         </div>
-        <div class="tab hidden">
+        <div class="tab">
             <h1 class="text-4xl p-5">Dietary Restrictions</h1>
             
             <Checkbox id="Vegetarian"/>
@@ -64,7 +66,7 @@
             <h1 class="text-2xl pt-5">Allergies</h1>
             <input class=" rounded-lg px-3 py-3 my-6 placeholder-gray-300 text-slate-600 relative bg-white text-sm border-0 shadow outline-none w-3/5" type="text" placeholder="Allergies">
         </div>
-        <div class="tab hidden">
+        <div class="tab">
             <h1 class="text-4xl p-5">Filters</h1>
             <div class="rounded-lg py-5">
                 <button class="inline-block px-6 bg-logo-color hover:bg-[#ed7e39] rounded-md py-2 mx-2">🍴</button>
@@ -82,22 +84,6 @@
                 <button class="inline-block px-6 bg-logo-color hover:bg-[#ed7e39] rounded-md py-2 mx-2">Any</button>
                 <p>Choose your meal, or select <strong>Any</strong>.</p>
             </div>
-        </div>
-
-        <!--buttons-->
-        <div class="overflow-auto">
-            <div class="float-right">
-                <button type="button" id="prevBtn" on:click={formAction(-1)}>Previous</button>
-                <button type="button" id="nextBtn" on:click={formAction(1)}>Next</button>
-            </div>
-        </div>
-        
-        <!--step things-->
-        <div class="text-center mt-10">
-            <span class="h-[15] w-[15] my-1 bg-[bg-gray-300] rounded-lg inline-block opacity-50 active:opacity-100"></span>
-            <span class="h-[15] w-[15] my-1 bg-[bg-gray-300] rounded-lg inline-block opacity-50 active:opacity-100"></span>
-            <span class="h-[15] w-[15] my-1 bg-[bg-gray-300] rounded-lg inline-block opacity-50 active:opacity-100"></span>
-            <span class="h-[15] w-[15] my-1 bg-[bg-gray-300] rounded-lg inline-block opacity-50 active:opacity-100"></span>
         </div>
 
     </div>

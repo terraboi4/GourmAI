@@ -79,8 +79,8 @@
                 
                 </div>
                 <div class="text-center">
-                    <button type="submit" class="bg-logo-color text-gray-600 rounded-lg px-5 py-2.5 mb-2.5text-center" on:click={login}>Login</button>
-                    <button type="submit" class="bg-logo-color text-gray-600 rounded-lg px-5 py-2.5 mb-2.5 text-center" on:click={signUp}>or Register</button>
+                    <button type="submit" class="bg-logo-color text-white rounded-lg px-5 py-2.5 mb-2.5text-center" on:click={login}>Login</button>
+                    <button type="submit" class="bg-logo-color text-white rounded-lg px-5 py-2.5 mb-2.5 text-center" on:click={signUp}>or Register</button>
                 </div>
                 
             </div>
